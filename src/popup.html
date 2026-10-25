@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Omni Social Guard & Harvester (IG & 𝕏)</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="card">
+    <!-- Master Dual-Platform Selector -->
+    <div class="platform-bar">
+      <button class="plat-tab active plat-tab-ig" id="platBtnIG">
+        <span class="plat-logo">📸</span> Instagram
+      </button>
+      <button class="plat-tab" id="platBtnX">
+        <span class="plat-logo">𝕏</span> X (Twitter)
+      </button>
+    </div>
+
+    <header class="header">
+      <div class="logo-group">
+        <div class="gradient-dot" id="headerDot"></div>
+        <div>
+          <h1 class="title" id="headerTitle">Instagram Guard</h1>
+          <p class="subtitle" id="headerSubtitle">Omni Harvester & Unlocker</p>
+        </div>
+      </div>
+      <div class="status-badge" id="statusBadge">
+        <span class="pulsing-dot"></span>
+        <span id="statusText">ACTIVE</span>
+      </div>
+    </header>
+
+    <!-- ── Instagram Tab Navigation ── -->
+    <div class="tabs-nav" id="tabsNavIG">
+      <button class="tab-btn active" id="tabBtnGuard">🛡️ Guard</button>
+      <button class="tab-btn" id="tabBtnHarvester">⚡ Harvest</button>
+      <button class="tab-btn" id="tabBtnVideoEye">🎬 Eye</button>
+      <button class="tab-btn" id="tabBtnLoopholes">⚡ Exploits</button>
+      <button class="tab-btn" id="tabBtnFlowIG">📊 Flow</button>
+    </div>
+
+    <!-- ── X (Twitter) Tab Navigation ── -->
+    <div class="tabs-nav hidden" id="tabsNavX" style="display: none;">
+      <button class="tab-btn active" id="tabBtnXGuard">🚀 𝕏 Guard</button>
+      <button class="tab-btn" id="tabBtnXScorer">🎯 Algo Scorer</button>
+      <button class="tab-btn" id="tabBtnXSplitter">🔗 Link Splitter</button>
+      <button class="tab-btn" id="tabBtnXLoopholes">⚡ 𝕏 Loopholes</button>
+      <button class="tab-btn" id="tabBtnFlowX">📊 Flow</button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 📸 INSTAGRAM PANELS (100% Preserved)        -->
+    <!-- ========================================== -->
+
+    <!-- IG Panel 1: Permission Guard -->
+    <div id="panelGuard" class="tab-panel active">
+      <div class="hero-stats">
+        <div class="hero-counter">
+          <span class="counter-number" id="grandTotal">1,728+</span>
+          <span class="counter-label">Total Allowed Switches & Knobs</span>
+        </div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="metric-val" id="gkxCount">632</span>
+          <span class="metric-name">Gatekeepers Unlocked</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="qexCount">152</span>
+          <span class="metric-name">Experiments Active</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="knobsCount">218</span>
+          <span class="metric-name">JustKnobs Allowed</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="configsCount">426</span>
+          <span class="metric-name">Configs & CLP Policies</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="guardsCount">150+</span>
+          <span class="metric-name">Core Discrete Guards</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="heartbeatCount">2.5s</span>
+          <span class="metric-name">Auto-Healing Daemon</span>
+        </div>
+      </div>
+
+      <div class="feature-tags">
+        <span class="tag tag-success">✓ Comet SSR Crawler Bot</span>
+        <span class="tag tag-success">✓ 12k Relay Records Cache</span>
+        <span class="tag tag-success">✓ Restricted Filters Off</span>
+        <span class="tag tag-success">✓ Auto-Uncover Sensitive</span>
+        <span class="tag tag-success">✓ Employee Privileges</span>
+        <span class="tag tag-success">✓ Lookaside CDN MP4</span>
+        <span class="tag tag-success">✓ Unified GraphQL Gateway</span>
+        <span class="tag tag-success">✓ Organic Insights</span>
+      </div>
+
+      <footer class="footer">
+        <button class="btn-relock" id="btnRelock">
+          <span class="btn-icon">⚡</span> Force Re-Lock All
+        </button>
+        <div class="footer-note" id="lastUpdated">Auto-healing continuously every 2.5s</div>
+      </footer>
+    </div>
+
+    <!-- IG Panel 2: Omni Bulk Harvester -->
+    <div id="panelHarvester" class="tab-panel">
+      <div class="harvester-form">
+        <div class="input-group">
+          <label class="input-label" for="omniTargets">Target Profile Handles</label>
+          <div class="input-row">
+            <input type="text" id="omniTargets" class="text-input" placeholder="e.g. schottnyc, aero_leather" />
+            <button id="btnUseCurrent" class="btn-small" title="Use profile from current active tab">📍 Active</button>
+          </div>
+        </div>
+
+        <div class="options-grid">
+          <div class="opt-field">
+            <label class="input-label" for="omniPostsLimit">Timeline Posts</label>
+            <select id="omniPostsLimit" class="select-input">
+              <option value="12">12 Posts</option>
+              <option value="24" selected>24 Posts</option>
+              <option value="48">48 Posts (Deep)</option>
+            </select>
+          </div>
+          <div class="opt-field">
+            <label class="input-label" for="omniCommentsDepth">Comments / Post</label>
+            <select id="omniCommentsDepth" class="select-input">
+              <option value="25">25 Comments</option>
+              <option value="50" selected>50 Comments</option>
+              <option value="100">100 Comments</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="omniMineLeads" checked />
+            <span>🔥 Mine Buyer Leads & Auto-Draft DM Pitches</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="omniChaining" checked />
+            <span>⚡ Auto-Chain Top Competitors in Niche</span>
+          </label>
+        </div>
+
+        <button id="btnStartHarvest" class="btn-harvest">
+          <span class="btn-icon">🚀</span> 1-Click Omni Harvest
+        </button>
+      </div>
+
+      <div id="harvestResultCard" class="result-card hidden">
+        <div class="result-header">
+          <span id="harvestSpinner" class="spinner"></span>
+          <span id="harvestStatusText">Extracting live data...</span>
+        </div>
+
+        <div class="result-metrics">
+          <div class="res-box">
+            <span class="res-num" id="resProfiles">0</span>
+            <span class="res-lbl">Profiles</span>
+          </div>
+          <div class="res-box">
+            <span class="res-num" id="resPosts">0</span>
+            <span class="res-lbl">Posts</span>
+          </div>
+          <div class="res-box">
+            <span class="res-num" id="resComments">0</span>
+            <span class="res-lbl">Comments</span>
+          </div>
+          <div class="res-box res-hot">
+            <span class="res-num" id="resLeads">0</span>
+            <span class="res-lbl">Hot Leads</span>
+          </div>
+        </div>
+
+        <div class="export-actions">
+          <button id="btnExportLeads" class="btn-export btn-export-leads" disabled>
+            📥 Export Leads CSV
+          </button>
+          <button id="btnExportJson" class="btn-export btn-export-json" disabled>
+            📥 Export Master JSON
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- IG Panel 3: Live Video Pixel Eye -->
+    <div id="panelVideoEye" class="tab-panel">
+      <div class="video-eye-form">
+        <div class="input-group">
+          <label class="input-label" for="videoTargetInput">Reel URL or Shortcode (Optional)</label>
+          <div class="input-row">
+            <input type="text" id="videoTargetInput" class="text-input" placeholder="Current tab video or reel code" />
+            <button id="btnUseCurrentReel" class="btn-small" title="Detect active reel from tab">📍 Tab</button>
+          </div>
+        </div>
+
+        <button id="btnAnalyzeVideo" class="btn-harvest" style="background: linear-gradient(135deg, #8a3ab9 0%, #e95950 50%, #fccc63 100%);">
+          <span class="btn-icon">👁️</span> Analyze Video & Pixel Hook
+        </button>
+      </div>
+
+      <div id="videoResultCard" class="result-card hidden">
+        <div class="result-header">
+          <span id="videoSpinner" class="spinner"></span>
+          <span id="videoStatusText">Analyzing video pixels & GraphQL...</span>
+        </div>
+
+        <div id="videoDetails" class="video-details hidden">
+          <div class="video-preview-row">
+            <img id="hookThumbnail" class="hook-thumb" alt="Hook Frame" />
+            <div class="video-meta-summary">
+              <span class="badge-retention" id="badgeRetention">High Retention</span>
+              <div class="meta-row"><strong>Res:</strong> <span id="vRes">1080x1920</span></div>
+              <div class="meta-row"><strong>Duration:</strong> <span id="vDuration">15s</span></div>
+              <div class="meta-row"><strong>Luminance:</strong> <span id="vLuma">115 / 255</span></div>
+              <div class="meta-row"><strong>Contrast:</strong> <span id="vContrast">68 / 100</span></div>
+            </div>
+          </div>
+
+          <div class="palette-container">
+            <span class="input-label">Dominant Hook Palette</span>
+            <div class="swatches-row" id="paletteSwatches"></div>
+          </div>
+
+          <div class="video-actions-list">
+            <div class="action-item">
+              <span class="action-label">Direct MP4 CDN:</span>
+              <button id="btnCopyMp4" class="btn-copy">📋 Copy Link</button>
+            </div>
+            <div class="action-item">
+              <span class="action-label">Audio Asset ID:</span>
+              <span id="audioAssetId" class="mono-id">-</span>
+              <button id="btnCopyAudio" class="btn-copy">📋 Copy</button>
+            </div>
+          </div>
+
+          <div class="export-actions">
+            <button id="btnDownloadAnalysis" class="btn-export btn-export-json">
+              📥 Save Full Analysis JSON
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IG Panel 4: Exploits & Loopholes Toolkit -->
+    <div id="panelLoopholes" class="tab-panel">
+      <!-- Section 1: Zero-Width Caption Cloaker -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">🥷 Zero-Width Watermarker</span>
+          <span class="badge-mini">Stealth</span>
+        </div>
+        <textarea id="cloakInputText" class="tool-textarea" rows="2" placeholder="Caption to embed invisible watermark..."></textarea>
+        <div class="input-row" style="margin-top: 6px;">
+          <input type="text" id="cloakSecretId" class="text-input" placeholder="Secret ID (e.g. ORLAVEN_2026)" />
+          <button id="btnEncodeCloak" class="btn-small">🔒 Encode</button>
+          <button id="btnDecodeCloak" class="btn-small">🔓 Decode</button>
+        </div>
+        <div id="cloakResultBox" class="result-box hidden">
+          <span id="cloakResultText" class="result-text-preview"></span>
+          <button id="btnCopyCloaked" class="btn-copy-mini">📋 Copy</button>
+        </div>
+      </div>
+
+      <!-- Section 2: BigInt Shortcode Math -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">🔢 Shortcode ⇄ BigInt PK</span>
+          <span class="badge-mini">Base64</span>
+        </div>
+        <div class="input-row">
+          <input type="text" id="mathShortcodeInput" class="text-input" placeholder="Shortcode (e.g. C-xXx) or Media PK" />
+          <button id="btnConvertShortcode" class="btn-small">🔄 Convert</button>
+        </div>
+        <div id="mathResultBox" class="result-box hidden">
+          <span id="mathResultText" class="result-text-preview"></span>
+          <button id="btnCopyMath" class="btn-copy-mini">📋 Copy</button>
+        </div>
+      </div>
+
+      <!-- Section 3: Lookaside CDN Token Expiry -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">⏳ CDN oe Expiration Decoder</span>
+          <span class="badge-mini">Lookaside</span>
+        </div>
+        <div class="input-row">
+          <input type="text" id="cdnOeInput" class="text-input" placeholder="Lookaside URL or oe hex" />
+          <button id="btnDecodeOe" class="btn-small">⏱️ Check</button>
+        </div>
+        <div id="cdnOeResultBox" class="result-box hidden">
+          <span id="cdnOeResultText" class="result-text-preview"></span>
+        </div>
+      </div>
+
+      <!-- Section 4: Ghost Geo-Tag Preset -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">📍 Ghost Geo-Tag Coordinates</span>
+          <span class="badge-mini">GPS Spoof</span>
+        </div>
+        <div class="input-row">
+          <select id="ghostLocationSelect" class="select-input" style="flex: 2;">
+            <option value="nyc">Manhattan, NY (40.7580, -73.9855)</option>
+            <option value="london">Mayfair, London (51.5098, -0.1478)</option>
+            <option value="dubai">Downtown Dubai (25.1972, 55.2744)</option>
+            <option value="tokyo">Ginza, Tokyo (35.6719, 139.7648)</option>
+            <option value="paris">Champs-Élysées, Paris (48.8698, 2.3075)</option>
+          </select>
+          <button id="btnGenerateGhostTag" class="btn-small">📍 Generate</button>
+        </div>
+        <div id="ghostResultBox" class="result-box hidden">
+          <span id="ghostResultText" class="result-text-preview"></span>
+          <button id="btnCopyGhost" class="btn-copy-mini">📋 Copy</button>
+        </div>
+      </div>
+
+      <!-- Section 5: Zero-Network Relay Store Dump -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">⚡ __RELAY_STORE__ 0-Network Dump</span>
+          <span class="badge-mini">RAM Dump</span>
+        </div>
+        <p class="tool-desc">Instant dump from active tab's local Relay memory without sending any HTTP requests.</p>
+        <button id="btnDumpRelayPopup" class="btn-harvest" style="padding: 8px 12px; margin-top: 6px;">
+          <span class="btn-icon">💾</span> Dump Active Tab Cache
+        </button>
+        <div id="relayDumpResultBox" class="result-box hidden">
+          <span id="relayDumpStatusText" class="result-text-preview"></span>
+          <button id="btnDownloadRelayJson" class="btn-copy-mini">📥 Save JSON</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 𝕏 X / TWITTER PANELS (Brand New Suite)      -->
+    <!-- ========================================== -->
+
+    <!-- X Panel 1: X Feature Switches & Guard -->
+    <div id="panelXGuard" class="tab-panel" style="display: none;">
+      <div class="x-hero-stats">
+        <div class="hero-counter">
+          <span class="x-counter-number" id="xGrandTotal">80+</span>
+          <span class="counter-label">Internal Feature Switches Forced TRUE</span>
+        </div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="metric-val" id="xSwitchesCount">80+</span>
+          <span class="metric-name">Switches Active</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="xQueriesCount">345</span>
+          <span class="metric-name">GraphQL IDs</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="xBotRisk">0.0</span>
+          <span class="metric-name">Bot Risk Score</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="xScribeStatus">100%</span>
+          <span class="metric-name">Scribe Blocked</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="xBlurStatus">Auto</span>
+          <span class="metric-name">Blurs Cleared</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val" id="xDaemonInterval">2.0s</span>
+          <span class="metric-name">Daemon Cycle</span>
+        </div>
+      </div>
+
+      <div class="feature-tags">
+        <span class="tag tag-success">✓ Freedom of Speech Not Reach</span>
+        <span class="tag tag-success">✓ Longform NoteTweets Uncut</span>
+        <span class="tag tag-success">✓ Grok Trends & Analysis API</span>
+        <span class="tag tag-success">✓ Creator Subscription Previews</span>
+        <span class="tag tag-success">✓ Scribe Telemetry Null-Sink</span>
+        <span class="tag tag-success">✓ Sensitive Blurs Unmasked</span>
+        <span class="tag tag-success">✓ Snowflake Math Badges</span>
+        <span class="tag tag-success">✓ Chrome 130 H2 Headers</span>
+      </div>
+
+      <footer class="footer">
+        <button class="btn-x-action" id="btnXRelock">
+          <span class="btn-icon">⚡</span> Force Re-Lock All X Switches
+        </button>
+        <div class="footer-note" id="xLastUpdated">Auto-unmasking blurs & blocking Scribe every 2.0s</div>
+      </footer>
+    </div>
+
+    <!-- X Panel 2: Open-Source Heavy Ranker Scorer -->
+    <div id="panelXScorer" class="tab-panel" style="display: none;">
+      <div class="harvester-form">
+        <div class="options-grid">
+          <div class="opt-field">
+            <label class="input-label" for="xScoreReplies">User Replies (+54x)</label>
+            <input type="number" id="xScoreReplies" class="text-input" value="10" min="0" />
+          </div>
+          <div class="opt-field">
+            <label class="input-label" for="xScoreAuthorReplies">Author Replies (+75x)</label>
+            <input type="number" id="xScoreAuthorReplies" class="text-input" value="5" min="0" />
+          </div>
+        </div>
+
+        <div class="options-grid">
+          <div class="opt-field">
+            <label class="input-label" for="xScoreBookmarks">Bookmarks (+12x)</label>
+            <input type="number" id="xScoreBookmarks" class="text-input" value="15" min="0" />
+          </div>
+          <div class="opt-field">
+            <label class="input-label" for="xScoreRetweets">Retweets (+1x)</label>
+            <input type="number" id="xScoreRetweets" class="text-input" value="8" min="0" />
+          </div>
+        </div>
+
+        <div class="options-grid">
+          <div class="opt-field">
+            <label class="input-label" for="xScoreLikes">Likes (+0.5x)</label>
+            <input type="number" id="xScoreLikes" class="text-input" value="45" min="0" />
+          </div>
+        </div>
+
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="xScoreMedia" checked />
+            <span>🎬 Native Video or Image (+2.0x Boost)</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="xScoreVerified" checked />
+            <span>🔷 Blue Verified Badge (+2.5x Multiplier)</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="xScoreExternalLink" />
+            <span style="color: #f4212e;">⚠️ External Link in Parent Tweet (-60% Penalty)</span>
+          </label>
+        </div>
+
+        <div class="algo-score-card">
+          <div class="counter-label">Predicted Candidate Rank Score</div>
+          <div class="algo-score-val" id="xFinalScoreDisplay">0.0</div>
+          <div class="algo-diag-box algo-diag-optimal" id="xDiagBox">OPTIMAL: Clean link-free distribution profile.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- X Panel 3: Link-in-Reply Second-Post Splitter -->
+    <div id="panelXSplitter" class="tab-panel" style="display: none;">
+      <div class="harvester-form">
+        <p class="tool-desc" style="color: #e7e9ea;">
+          External links in the main tweet trigger Twitter's severe <strong>-60% reach penalty</strong> ($P_{\text{link}} = 0.4$). This tool auto-splits your message to retain 100% reach.
+        </p>
+
+        <div class="input-group">
+          <label class="input-label" for="xSplitMainCopy">Main Tweet Hook Copy</label>
+          <textarea id="xSplitMainCopy" class="tool-textarea" rows="3" placeholder="Enter high-engagement hook without link..."></textarea>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label" for="xSplitUrl">Outbound Destination URL</label>
+          <input type="text" id="xSplitUrl" class="text-input" placeholder="https://example.com/store/deal" />
+        </div>
+
+        <div class="input-group">
+          <label class="input-label" for="xSplitCta">CTA Trigger Line</label>
+          <input type="text" id="xSplitCta" class="text-input" value="Link in reply 👇" />
+        </div>
+
+        <button id="btnRunSplitter" class="btn-x-action">
+          <span class="btn-icon">⚡</span> Generate Link-Safe 2-Post Split
+        </button>
+
+        <div id="splitResultContainer" class="result-card hidden">
+          <div class="tool-header">
+            <span class="tool-title">Post #1: Main Tweet (100% Reach)</span>
+            <button id="btnCopyPost1" class="btn-copy-mini">📋 Copy #1</button>
+          </div>
+          <div class="result-text-preview" id="post1Preview" style="margin-bottom: 8px;"></div>
+
+          <div class="tool-header">
+            <span class="tool-title">Post #2: Self-Reply with Destination URL</span>
+            <button id="btnCopyPost2" class="btn-copy-mini">📋 Copy #2</button>
+          </div>
+          <div class="result-text-preview" id="post2Preview"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- X Panel 4: 𝕏 Loopholes & Forensics -->
+    <div id="panelXLoopholes" class="tab-panel" style="display: none;">
+      <!-- Section 1: Snowflake Timestamp -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">🕒 Snowflake Millisecond Chronology</span>
+          <span class="badge-mini">Math</span>
+        </div>
+        <div class="input-row">
+          <input type="text" id="xSnowflakeInput" class="text-input" placeholder="Tweet ID (e.g. 2110362635778531698)" />
+          <button id="btnCalcSnowflake" class="btn-small">⏱️ Decode</button>
+        </div>
+        <div id="xSnowflakeResult" class="result-box hidden">
+          <span id="xSnowflakeText" class="result-text-preview"></span>
+          <button id="btnCopySnowflake" class="btn-copy-mini">📋 Copy</button>
+        </div>
+      </div>
+
+      <!-- Section 2: TweepCred Simulator -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">📊 TweepCred PageRank Simulator</span>
+          <span class="badge-mini">0-100</span>
+        </div>
+        <div class="input-row">
+          <input type="number" id="xTweepFollowers" class="text-input" placeholder="Followers" style="flex: 1;" />
+          <input type="number" id="xTweepFollowing" class="text-input" placeholder="Following" style="flex: 1;" />
+          <button id="btnCalcTweepcred" class="btn-small">⚡ Score</button>
+        </div>
+        <div id="xTweepcredResult" class="result-box hidden">
+          <span id="xTweepcredText" class="result-text-preview"></span>
+        </div>
+      </div>
+
+      <!-- Section 3: Zero-Width Sales Cloaker -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">🥷 Zero-Width Sales Cloaker</span>
+          <span class="badge-mini">Stealth</span>
+        </div>
+        <textarea id="xCloakInput" class="tool-textarea" rows="2" placeholder="Text with sales keywords (buy, discount, sale)..."></textarea>
+        <button id="btnCloakXText" class="btn-x-action" style="margin-top: 6px; padding: 6px 12px;">
+          🔒 Inject Invisible Zero-Width Spaces
+        </button>
+        <div id="xCloakResult" class="result-box hidden">
+          <span id="xCloakText" class="result-text-preview"></span>
+          <button id="btnCopyXCloaked" class="btn-copy-mini">📋 Copy</button>
+        </div>
+      </div>
+
+      <!-- Section 4: 0-Network Active Tab Tweet Dump -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">⚡ 0-Network Active Tab Tweet Dump</span>
+          <span class="badge-mini">DOM Dump</span>
+        </div>
+        <p class="tool-desc">Extracts all visible tweets, metrics, and media from the active x.com tab without any network requests.</p>
+        <button id="btnDumpXTweets" class="btn-x-action" style="margin-top: 6px; padding: 6px 12px;">
+          💾 Dump Active Tweets to JSON
+        </button>
+        <div id="xDumpResultBox" class="result-box hidden">
+          <span id="xDumpStatusText" class="result-text-preview"></span>
+          <button id="btnDownloadXJson" class="btn-copy-mini">📥 Save JSON</button>
+        </div>
+      </div>
+    <!-- ========================================== -->
+    <!-- 📊 VISUAL WORKFLOW PIPELINE & TELEMETRY    -->
+    <!-- ========================================== -->
+    <div id="panelFlow" class="tab-panel" style="display: none;">
+      <div class="hero-stats flow-hero">
+        <div class="flow-badge-top">
+          <span class="pulsing-emerald"></span> ZERO-API COST EXTRACTION KERNEL
+        </div>
+        <div class="cost-saved-counter">
+          <span class="cost-currency">$</span><span id="savedCostAmount">1,450.00</span>
+          <span class="cost-label">Est. Developer API Costs Saved This Month</span>
+        </div>
+        <div class="cost-subtext">Direct-to-Heap React Fiber & Relay Traversal (0 API Tokens)</div>
+      </div>
+
+      <!-- Animated SVG Pipeline Workflow -->
+      <div class="workflow-card">
+        <div class="workflow-header">
+          <span class="workflow-title">⚡ Interactive Memory Pipeline Flow</span>
+          <span class="badge-live">LIVE TELEMETRY</span>
+        </div>
+        
+        <div class="pipeline-visual-container">
+          <div class="pipeline-node node-active" id="nodeDom">
+            <div class="node-icon">🌐</div>
+            <div class="node-info">
+              <span class="node-name">DOM / Heap</span>
+              <span class="node-metric">Zero-Network</span>
+            </div>
+            <div class="node-status-glow"></div>
+          </div>
+          
+          <div class="flow-arrow">
+            <svg class="flow-svg" width="24" height="14" viewBox="0 0 24 14">
+              <path class="flow-path" d="M0,7 L20,7 M15,2 L20,7 L15,12" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="pipeline-node node-active" id="nodeFiber">
+            <div class="node-icon">🧬</div>
+            <div class="node-info">
+              <span class="node-name">React Fiber</span>
+              <span class="node-metric">Memoized</span>
+            </div>
+            <div class="node-status-glow"></div>
+          </div>
+
+          <div class="flow-arrow">
+            <svg class="flow-svg" width="24" height="14" viewBox="0 0 24 14">
+              <path class="flow-path" d="M0,7 L20,7 M15,2 L20,7 L15,12" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="pipeline-node node-active" id="nodeShield">
+            <div class="node-icon">🛡️</div>
+            <div class="node-info">
+              <span class="node-name">Gatekeeper</span>
+              <span class="node-metric">1,450+ Knobs</span>
+            </div>
+            <div class="node-status-glow"></div>
+          </div>
+
+          <div class="flow-arrow">
+            <svg class="flow-svg" width="24" height="14" viewBox="0 0 24 14">
+              <path class="flow-path" d="M0,7 L20,7 M15,2 L20,7 L15,12" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="pipeline-node node-success" id="nodeOutput">
+            <div class="node-icon">💎</div>
+            <div class="node-info">
+              <span class="node-name">Output</span>
+              <span class="node-metric">4.2ms / 0$</span>
+            </div>
+            <div class="node-status-glow"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live ROI & Performance Telemetry Grid -->
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="metric-val text-emerald" id="flowRequestsSaved">48,250</span>
+          <span class="metric-name">API Calls Avoided</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val text-cyan" id="flowLatency">4.2ms</span>
+          <span class="metric-name">In-Memory Latency</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val text-amber" id="flowTrackingBlocked">100%</span>
+          <span class="metric-name">Telemetry Nullified</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val text-purple" id="flowAntiDetect">99.8%</span>
+          <span class="metric-name">Anti-Detect Score</span>
+        </div>
+      </div>
+
+      <!-- Interactive Action Controls -->
+      <div class="flow-action-card">
+        <button id="btnRunTrace" class="btn-gradient-trace">
+          <span class="btn-icon">⚡</span> Run Live Memory & Pipeline Diagnostic
+        </button>
+        <div id="flowTraceResult" class="result-box hidden">
+          <div class="trace-header">
+            <span class="trace-title">🔍 Diagnostic Trace Complete</span>
+            <span class="trace-time">0.08s</span>
+          </div>
+          <pre class="trace-pre" id="traceOutputText"></pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

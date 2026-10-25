@@ -1,0 +1,43 @@
+name: AegisSocial Kernel CI & Release Validation
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate Manifest V3 Syntax
+        run: |
+          node -e "
+            const fs = require('fs');
+            const manifest = JSON.parse(fs.readFileSync('src/manifest.json', 'utf8'));
+            if (manifest.manifest_version !== 3) throw new Error('Must be Manifest V3');
+            console.log('✅ Manifest V3 Validated:', manifest.name);
+          "
+
+      - name: Check JavaScript Syntax
+        run: |
+          node -c src/popup.js
+          node -c src/content.js
+          node -c src/x-content.js
+
+      - name: Build Production Zip Archive
+        run: node scripts/build-release.mjs
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aegis-social-kernel-extension-zip
+          path: dist/*.zip
