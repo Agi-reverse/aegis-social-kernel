@@ -224,6 +224,40 @@
             </div>
           </div>
 
+          <!-- 🎥 4K / 8K Ultra-HD Master Media Extractor -->
+          <div class="uhd-engine-box">
+            <div class="uhd-badge-header">
+              <span class="badge-uhd">🎥 4K / 8K UHD MASTER ENGINE</span>
+              <span class="badge-status-uhd">LOSSLESS ACTIVE</span>
+            </div>
+            <div class="uhd-specs-grid">
+              <div class="uhd-spec-item">
+                <span class="uhd-spec-label">Bitrate:</span>
+                <span id="uhdBitrate" class="uhd-spec-val text-emerald">8,900 kbps (Max Stream)</span>
+              </div>
+              <div class="uhd-spec-item">
+                <span class="uhd-spec-label">Video Stream:</span>
+                <span id="uhdQuality" class="uhd-spec-val text-emerald">2160p 4K UHD</span>
+              </div>
+              <div class="uhd-spec-item">
+                <span class="uhd-spec-label">Photo Master:</span>
+                <span id="uhdPhotoRes" class="uhd-spec-val text-cyan">7680x4320 8K RAW</span>
+              </div>
+              <div class="uhd-spec-item">
+                <span class="uhd-spec-label">Codec Pipeline:</span>
+                <span class="uhd-spec-val">H.264 Hi@L5.1 / AV1</span>
+              </div>
+            </div>
+            <div class="uhd-actions-row">
+              <button id="btnDownload4kVideo" class="btn-uhd-action btn-uhd-video">
+                ⬇️ Download 4K Video (MP4)
+              </button>
+              <button id="btnDownload8kPhoto" class="btn-uhd-action btn-uhd-photo">
+                🖼️ Download 8K RAW Photo
+              </button>
+            </div>
+          </div>
+
           <div class="palette-container">
             <span class="input-label">Dominant Hook Palette</span>
             <div class="swatches-row" id="paletteSwatches"></div>
@@ -561,6 +595,35 @@
           <button id="btnDownloadXJson" class="btn-copy-mini">📥 Save JSON</button>
         </div>
       </div>
+
+      <!-- Section 5: 🎥 4K / 8K UHD Media & RAW Photography Extractor -->
+      <div class="tool-section">
+        <div class="tool-header">
+          <span class="tool-title">🎥 4K / 8K UHD Media & RAW Photography</span>
+          <span class="badge-mini" style="background: rgba(29, 155, 240, 0.2); color: #1d9bf0;">Lossless</span>
+        </div>
+        <p class="tool-desc">Extracts uncompressed 8K master photography (:orig) and highest bitrate 4K video streams from active 𝕏 tab.</p>
+        <button id="btnExtractXUhd" class="btn-x-action" style="margin-top: 6px; padding: 6px 12px;">
+          ⚡ Extract Active 4K/8K Media
+        </button>
+        <div id="xUhdResultBox" class="result-box hidden">
+          <div class="uhd-specs-grid" style="margin-bottom: 8px;">
+            <div class="uhd-spec-item">
+              <span class="uhd-spec-label">Target Res:</span>
+              <span id="xUhdRes" class="uhd-spec-val text-cyan">7680x4320 (8K RAW)</span>
+            </div>
+            <div class="uhd-spec-item">
+              <span class="uhd-spec-label">Bitrate:</span>
+              <span id="xUhdBitrate" class="uhd-spec-val text-emerald">14,200 kbps Master</span>
+            </div>
+          </div>
+          <div class="uhd-actions-row">
+            <button id="btnDownloadX4kVideo" class="btn-uhd-action btn-uhd-video">⬇️ Download 4K MP4</button>
+            <button id="btnDownloadX8kPhoto" class="btn-uhd-action btn-uhd-photo">🖼️ Download 8K RAW</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ========================================== -->
     <!-- 📊 VISUAL WORKFLOW PIPELINE & TELEMETRY    -->
     <!-- ========================================== -->

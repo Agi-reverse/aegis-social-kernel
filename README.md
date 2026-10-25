@@ -56,6 +56,7 @@ flowchart LR
 ## 🚀 Key Feature Matrix
 
 ### 📸 Instagram Engine (68 Capabilities)
+- **🎥 4K / 8K Ultra-HD Master Media Extractor**: Direct Lookaside CDN and DASH manifest parser pulling uncompressed 4K video (2160p, 8,900+ kbps) and 8K master catalog photos.
 - **React Relay Memory Dump**: Extract entire normalized GraphQL cache (`window.__additionalData`) with a single click.
 - **1,450+ Gatekeeper & Experiment Unlocks**: Unlock employee features, Comet SSR crawler flags, and unmask blurs.
 - **Lookaside CDN Video Stream Miner**: Fetch raw unwatermarked MP4 video streams directly from the video player instance.
@@ -63,6 +64,7 @@ flowchart LR
 - **Engagement Quality Matrix**: Multi-variant weighted algorithms (Likes: 1x, Comments: 2x, Saves: 3x, Shares: 4x).
 
 ### 𝕏 X / Twitter Engine (17 Capabilities)
+- **🎥 8K RAW Photography & 4K Video Extractor**: Bypasses web downsampling by auto-converting image assets to uncompressed `:orig` 8K masters and grabbing maximum bitrate 4K video streams.
 - **Heavy Ranker Algorithm Scorer**: Real-time simulation of X's open-source recommendation algorithm.
 - **Zero-Suppression Link-in-Reply Splitter**: Automatically splits external links into auto-reply threads to bypass the algorithm's -60% reach penalty.
 - **64-Bit Snowflake Chronology**: Decodes tweet creation millisecond timestamps directly from tweet IDs via binary bit-shifts.

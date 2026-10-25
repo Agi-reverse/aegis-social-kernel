@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "AegisSocial Kernel: Zero-Cost React Fiber & Gatekeeper Engine",
-  "version": "3.0.0",
-  "description": "Zero-API cost in-memory extraction engine for Instagram & X (Twitter). Traverses React 19 Fiber trees, unlocks 1,728 Gatekeepers, and nullifies telemetry.",
+  "version": "3.1.0",
+  "description": "Zero-API cost in-memory extraction engine for Instagram & X (Twitter) with 4K/8K Ultra-HD Media Stream Extractor. Traverses React 19 Fiber trees, unlocks 1,728 Gatekeepers, and nullifies telemetry.",
   "permissions": [
     "storage",
     "activeTab",
