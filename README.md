@@ -1,276 +1,172 @@
 <div align="center">
 
-# ⚡ AegisSocial Kernel
-### **Autonomous In-Memory Dual-Platform Reverse Engineering & Extraction Engine**
-*Direct-to-Heap React 19 Fiber & Relay Traversal • 4K/8K UHD Stream Mining • 1,728 Gatekeepers Unlocked*
-
-[![Release v3.1.0](https://img.shields.io/badge/Release-v3.1.0_Production-8A3AB9?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Agi-reverse/aegis-social-kernel/releases/tag/v3.1.0)
-[![Manifest V3](https://img.shields.io/badge/Chrome-Manifest_V3-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/intro/)
-[![Zero API Costs](https://img.shields.io/badge/API_Cost-%240.00_Free-00F5A0?style=for-the-badge&logo=cashapp&logoColor=white)](docs/COST_BENEFIT_ANALYSIS.md)
-[![4K / 8K Master](https://img.shields.io/badge/Media-4K_UHD_%26_8K_RAW-FF0055?style=for-the-badge&logo=youtube&logoColor=white)](#-4k--8k-ultra-hd-master-media-pipeline)
-[![React 19 Fiber](https://img.shields.io/badge/React_Fiber-18%20%2F%2019_Hooked-61DAFB?style=for-the-badge&logo=react&logoColor=black)](docs/ARCHITECTURE.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-F0883E?style=for-the-badge)](LICENSE)
+# AegisSocial Kernel
+### In-Memory Extraction & Reverse-Engineering Engine for Instagram & X
 
 <br/>
 
-```text
-🔥 $60,000/YR API COSTS ELIMINATED • 1,728 GATEKEEPERS UNLOCKED • 4K UHD & 8K RAW UNCOMPRESSED • 0 PROXIES • 0 BANS
-```
+<img src="docs/media/pipeline-flow.gif" alt="AegisSocial Kernel Pipeline Flow" width="860" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);" />
 
-<p align="center">
-  <b>Stop burning $5,000/month on restrictive API tiers and fragile proxy pools.</b><br/>
-  AegisSocial Kernel hooks directly into your authenticated browser V8 heap, bypassing Twitter and Meta's official API paywalls. It extracts uncompressed 4K/8K media, dumps normalized GraphQL Relay stores, and nullifies anti-automation telemetry—all running in-memory with 0 network overhead.
-</p>
+<br/><br/>
 
-[⚡ 30s Quickstart](#-30-second-quickstart) • [🏛️ System Architecture](#-system-architecture--v8-pipeline) • [🎥 4K/8K UHD Engine](#-4k--8k-ultra-hd-master-media-pipeline) • [🎯 Heavy Ranker Scorer](#-algorithm-firewall--heavy-ranker-simulation) • [🤖 Autonomous Agents](#-autonomous-ai-agent-workflow-dag) • [💰 Cost Matrix](#-enterprise-cost-comparison)
+[![Manifest V3](https://img.shields.io/badge/Chrome-Manifest%20V3-1f2937?style=flat-square&logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/intro/)
+[![Release](https://img.shields.io/badge/Release-v3.1.0-1f2937?style=flat-square&logo=github&logoColor=white)](https://github.com/Agi-reverse/aegis-social-kernel/releases/tag/v3.1.0)
+[![React 19](https://img.shields.io/badge/React%20Fiber-18%20%2F%2019-1f2937?style=flat-square&logo=react&logoColor=white)](docs/ARCHITECTURE.md)
+[![License](https://img.shields.io/badge/License-MIT-1f2937?style=flat-square)](LICENSE)
+
+<br/>
+
+A high-performance Chrome extension that operates directly inside the Chromium V8 runtime,  
+bypassing rate limits and official API costs through in-memory React Fiber traversal.
+
+[Architecture](#architecture) • [Features](#key-capabilities) • [4K/8K Media Pipeline](#4k--8k-media-pipeline) • [Quickstart](#quickstart) • [Cost Analysis](#cost-comparison)
 
 ---
 
 </div>
 
-## 💡 The Paradigm Shift: Why APIs & Traditional Scrapers are Obsolete
+## Overview
 
-| Traditional Scraping & APIs | The AegisSocial In-Memory Kernel |
-| :--- | :--- |
-| ❌ **Twitter Pro API**: **$5,000 / month** ($60,000/yr) for rate-limited reads. | 💎 **100% Free ($0.00)**: Direct V8 heap extraction with unlimited throughput. |
-| ❌ **Brittle HTML Parsing**: Obfuscated CSS (`css-175oi2r`) changes every 48 hours. | 💎 **React 19 Fiber Traversal**: Reads clean memoized state (`__reactFiber$`) permanently. |
-| ❌ **Proxy Costs & Captchas**: $500–$1,200/mo residential rotating proxy fleet. | 💎 **Zero Proxies Needed**: Inherits your genuine authenticated residential browser session. |
-| ❌ **Compressed Downscaled Media**: Official feeds force compressed 720p/1080p. | 💎 **4K UHD & 8K RAW Mining**: Sniffs internal DASH manifests & uncompressed `:orig` assets. |
-| ❌ **Detection & Shadowbans**: FalcoLogger & Scribe beacons log scraping behavior. | 💎 **Telemetry Null-Sink**: Intercepts tracking beacons with synthetic 200 OK responses. |
+Modern social platforms have placed basic read access behind prohibitive paywalls ($5,000/month on X) while deploying obfuscated class names to break standard scrapers.
+
+AegisSocial Kernel takes a fundamentally different engineering approach: instead of making external HTTP requests or parsing unstable HTML DOM strings, it hooks into your active authenticated browser tab's V8 heap. By reading internal React 19 Fiber nodes and GraphQL Relay stores directly from memory, it delivers clean, structured JSON data with zero network overhead and zero proxy dependencies.
 
 ---
 
-## 🏛️ System Architecture & V8 Pipeline
+## Architecture
 
-AegisSocial Kernel operates entirely in the browser's `MAIN` world context at `document_start`, intercepting webpack modules, React Fiber roots, and GraphQL network sinks before security gatekeepers can evaluate.
+The kernel initializes at `document_start` within the `MAIN` world execution context, establishing read-only access to internal component trees before security telemetry can evaluate.
 
 ```mermaid
-flowchart TD
-    subgraph BrowserRuntime ["🖥️ Authenticated Chromium V8 Engine (Main World)"]
-        A["🌐 Active Session DOM & Viewport"]
-        B["🧬 React 19 Fiber Root (__reactFiber$)"]
-        C["📦 Normalized GraphQL Relay Store (window.__additionalData)"]
-        D["🎥 Media Engine (Lookaside CDN & DASH Manifests)"]
+flowchart LR
+    A["Active Chromium Tab"] --> B["React 19 Fiber Heap"]
+    B --> C["Gatekeeper Subsystem"]
+    C --> D["4K / 8K Demuxer"]
+    D --> E["Normalized JSON Output"]
+
+    subgraph Protection ["Telemetry Shields"]
+        P1["FalcoLogger Null-Sink"]
+        P2["Scribe Blackhole"]
     end
 
-    subgraph AegisKernel ["⚡ AegisSocial In-Memory Kernel"]
-        K1["🛡️ Gatekeeper Unlocker Matrix (1,728 Switches & Knobs)"]
-        K2["🥷 Telemetry Null-Sink (FalcoLogger & Scribe Blackhole)"]
-        K3["🔍 DASH Bitrate Demuxer (4K UHD 2160p @ 60fps)"]
-        K4["🖼️ RAW Photography Unmasker (:orig 8K Lossless)"]
-        K5["🎯 Heavy Ranker Algorithm Firebox (Score & Link-Splitter)"]
-    end
-
-    subgraph OutputSurfaces ["💎 Zero-Cost Output & Orchestration"]
-        O1["📊 Interactive SVG Workflow HUD"]
-        O2["⚡ Social God-Mode MCP Server (85 Local Tools)"]
-        O3["🤖 Autonomous AI Agents (Claude / Codex / n8n)"]
-        O4["📥 0-Cost Structured JSON & CSV Exports"]
-    end
-
-    A -->|Hook V8 Node| B
-    B -->|Traverse Memoized Props| C
-    A -->|Sniff HTML5 Video Player| D
-
-    B --> K1
-    C --> K1
-    B --> K2
-    D --> K3
-    A --> K4
-    B --> K5
-
-    K1 & K2 & K3 & K4 & K5 --> O1
-    K1 & K2 & K3 & K4 & K5 --> O2
-    O2 --> O3
-    O1 --> O4
+    B -.-> P1
+    C -.-> P2
 ```
+
+### Core Subsystems
+
+| Subsystem | Execution Method | Technical Function |
+| :--- | :--- | :--- |
+| **Fiber Traversal** | V8 Heap Inspection | Traverses `__reactFiber$` and `memoizedProps` to read state without DOM querying. |
+| **Relay Memory Dump** | Normalized Cache Hook | Reads `window.__additionalData` and `relay_store` to extract complete timelines. |
+| **Gatekeeper Matrix** | Webpack Module Override | Unlocks 1,728 internal experiment flags, enabling internal crawler and SSR views. |
+| **Telemetry Null-Sink** | Prototype Replacement | Replaces telemetry loggers with synthetic 200 OK sinks to prevent activity flags. |
+| **UHD Media Extractor** | DASH / CDN Demuxing | Parses raw Lookaside MP4 streams and uncompressed `:orig` photographic masters. |
 
 ---
 
-## 🎥 4K / 8K Ultra-HD Master Media Pipeline
+## 4K / 8K Media Pipeline
 
-Standard web clients force aggressive media compression (downsampling reels to 720p/1080p and photos to WebP). AegisSocial Kernel penetrates the internal media representation layer to retrieve master catalog uploads.
+Standard web interfaces aggressively downsample video to 720p and images to compressed WebP formats. AegisSocial Kernel extracts master assets directly from internal playback representations.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor User as 👤 Developer / User
-    participant Popup as 🖥️ AegisSocial HUD
-    participant Kernel as ⚡ Content Script (MAIN World)
-    participant V8 as 🧬 React Fiber / DOM
-    participant CDN as 🌐 Lookaside CDN & Twimg
+    participant UI as Browser Extension
+    participant Core as V8 Kernel
+    participant Heap as Component State
+    participant CDN as Content Delivery
 
-    User->>Popup: Clicks "Extract 4K/8K Master Media"
-    Popup->>Kernel: Send AEGIS_4K_EXTRACT_REQUEST
-    Kernel->>V8: Sniff Video Element & Relay Media Records
-    V8-->>Kernel: Return video_dash_manifest & image_versions2
-    Note over Kernel: Parse DASH MPD XML:<br/>Representation bandwidth > 8,000,000 bps<br/>Max Dimensions: 3840x2160 (4K)
-    Note over Kernel: Transform X Images:<br/>format=jpg&name=large ➔ format=png&name=orig (8K RAW)
-    Kernel->>CDN: Direct Lookaside Stream Fetch (No Auth Gateway)
-    CDN-->>Kernel: Uncompressed Master Bitstream (14.2 Mbps)
-    Kernel-->>Popup: Emit Master Asset URLs + Realtime Telemetry
-    Popup-->>User: 1-Click Master MP4 / RAW Photo Download Ready
+    UI->>Core: Request Master Asset
+    Core->>Heap: Query DASH Manifest & Image Candidates
+    Heap-->>Core: Return Representation Sets
+    Note over Core: Parse DASH MPD XML (Bandwidth > 8 Mbps)<br/>Convert X CDN URLs to :orig format
+    Core->>CDN: Resolve Direct Lookaside Stream
+    CDN-->>UI: Deliver Lossless 4K MP4 / 8K Photo
 ```
 
-### 🔬 Technical Specification:
-* **Instagram 4K UHD Video**: Decodes `video_dash_manifest` XML, extracting highest bandwidth `Representation` nodes (`codecs="avc1.640028"` or `AV1 High Profile`), delivering **3840x2160 @ 60fps** at **8,900+ kbps**.
-* **Instagram 8K Catalog Photography**: Traverses `image_versions2.candidates` and `display_resources` to extract original master photography (up to **7680x4320** uncompressed).
-* **X (Twitter) 8K RAW Photos**: Strips CDN resize parameters (`&name=small|medium|large`) and forces **`&name=orig&format=png`**, restoring lossless uncompressed master camera raw files.
-* **X 4K Video Demuxer**: Queries `extended_entities.media[0].video_info.variants` sorted descending by bitrate, bypassing the 720p adaptive HLS player downscale.
+* **Instagram 4K Video**: Intercepts `video_dash_manifest` XML, extracting representations matching 3840x2160 resolution at bitrates exceeding 8,900 kbps.
+* **Instagram 8K Photography**: Queries `image_versions2.candidates` sorted descending by pixel density, selecting uncompressed original catalog uploads.
+* **X 8K Master Photos**: Strips downscaling URL parameters, converting assets to `format=png&name=orig` for lossless original camera raw resolution.
+* **X 4K Video Streams**: Extracts maximum bitrate variants from `extended_entities`, bypassing adaptive web player bitrate caps.
 
 ---
 
-## 🎯 Algorithm Firewall & Heavy Ranker Simulation
+## Key Capabilities
 
-The kernel includes a real-time simulation of X's open-source Heavy Ranker algorithm, coupled with a link-suppression bypass firewall.
+### Instagram Engine
+* **Relay Store Extraction**: Dumps normalized client-side GraphQL records in a single pass.
+* **Gatekeeper Unlocker**: Enables internal debug views, employee features, and unmasks blurred media.
+* **Audience Intent Classifier**: Filters live post comments for high-intent purchase inquiries.
+* **Engagement Metrics Matrix**: Computes weighted interactions across likes, comments, saves, and shares.
+* **Zero-Width Watermarking**: Injects invisible Unicode markers into captions for distribution tracking.
 
-### 🧮 Mathematical Ranking Formula:
-$$\text{CandidateScore} = 54 R_{\text{user}} + 75 R_{\text{author}} + 12 B + 1 RT + 0.5 L - 60\% P_{\text{link}}$$
-
-Where:
-* $R_{\text{user}}$ = User Replies to Post (**+54x boost**)
-* $R_{\text{author}}$ = Author Replies back in thread (**+75x boost**)
-* $B$ = Bookmarks (**+12x boost**)
-* $P_{\text{link}}$ = External link penalty multiplier (**$0.40$ = -60% reach suppression**)
-
-```mermaid
-flowchart LR
-    In["📝 Composer Text with Link"] --> Decision{"Link in Parent Tweet?"}
-    Decision -- "YES (Penalized)" --> Penalty["⚠️ Heavy Ranker Penalty Applied<br/>Reach Dropped by -60%"]
-    Decision -- "NO (Safe)" --> Safe["✅ 100% Reach Retained"]
-
-    In --> Splitter["⚡ Aegis 2-Post Splitter"]
-    Splitter --> Post1["Post #1: High-Engagement Hook<br/>(100% Organic Reach Boost)"]
-    Splitter --> Post2["Post #2: Self-Reply Thread<br/>(Contains Destination URL)"]
-    
-    Post1 --> Boost["🚀 Heavy Ranker Full Velocity Boost"]
-```
+### X (Twitter) Engine
+* **Heavy Ranker Simulation**: Real-time evaluation of X's open-source recommendation algorithm:
+  $$\text{Score} = 54 R_{\text{user}} + 75 R_{\text{author}} + 12 B + 1 RT + 0.5 L - 60\% P_{\text{link}}$$
+* **Link-in-Reply Splitter**: Splits links into automated reply threads to avoid the -60% external link reach penalty.
+* **Snowflake Chronology**: Bit-shifts 64-bit tweet IDs to calculate millisecond-precise creation timestamps.
+* **TweepCred Simulator**: Evaluates account authority scores using internal PageRank follower ratios.
+* **Timeline DOM Dumper**: Exports visible timeline posts and engagement metrics without outbound requests.
 
 ---
 
-## 🤖 Autonomous AI Agent Workflow DAG
-
-AegisSocial Kernel seamlessly bridges with **Social God-Mode MCP** (85 native tools) to empower AI agents (Claude, Codex, Antigravity, n8n) with autonomous browsing intelligence.
-
-```mermaid
-flowchart TD
-    subgraph AgentLayer ["🤖 Autonomous AI Agent Layer (Claude / Antigravity / n8n)"]
-        Agent["🧠 AI Orchestrator Agent"]
-    end
-
-    subgraph MCPLayer ["⚡ Social God-Mode MCP Server (85 Local Tools)"]
-        T1["ig_fiber_media_mine"]
-        T2["ig_extract_buyer_leads"]
-        T3["x_open_algorithm_scorer"]
-        T4["x_active_tweets_extractor"]
-        T5["ig_relay_store_memory_dump"]
-    end
-
-    subgraph KernelEngine ["🛡️ AegisSocial Chrome Extension Kernel"]
-        Bridge["🌉 Unified Social Chrome Bridge (WebSocket / IPC)"]
-        V8Heap["🧬 Chromium V8 In-Memory Session"]
-    end
-
-    subgraph BusinessOutcomes ["📈 Autonomous Growth Outcomes"]
-        L1["🔥 Real-Time Qualified Buyer Leads"]
-        L2["🎥 4K/8K Asset Archives"]
-        L3["📊 Daily Competitor Gap Intelligence"]
-    end
-
-    Agent -->|JSON-RPC 2.0| MCPLayer
-    T1 & T2 & T3 & T4 & T5 --> Bridge
-    Bridge --> V8Heap
-    V8Heap --> L1 & L2 & L3
-```
-
----
-
-## 🚀 Complete Capability Matrix
-
-### 📸 Instagram In-Memory Engine (68 Subsystems)
-* **🎥 4K / 8K Ultra-HD Master Stream Extractor**: Lookaside CDN and DASH manifest parser pulling uncompressed 4K video (2160p, 8,900+ kbps) and 8K master catalog photos.
-* **🧬 React Relay Memory Dump**: Extract entire normalized GraphQL cache (`window.__additionalData`) with a single click.
-* **🛡️ 1,728 Gatekeeper & Experiment Unlocks**: Unlock employee features, Comet SSR crawler flags, and unmask blurs.
-* **🥷 FalcoLogger Telemetry Null-Sink**: Nullifies tracking beacons with synthetic 200 OK responses to eliminate ban risks.
-* **🎯 Audience Buyer Intent Classifier**: Detect high-intent buyer inquiries (`"Price?"`, `"How to order?"`) from live comments.
-* **📊 Engagement Quality Matrix**: Multi-variant weighted algorithms (Likes: 1x, Comments: 2x, Saves: 3x, Shares: 4x).
-* **🔒 Zero-Width Stealth Watermarker**: Embeds invisible zero-width Unicode identifiers (`\u200B`, `\u200C`) into captions for leak attribution.
-
-### 𝕏 (Twitter) In-Memory Engine (17 Subsystems)
-* **🎥 8K RAW Photography & 4K Video Extractor**: Bypasses web downsampling by auto-converting image assets to uncompressed `:orig` 8K masters (`format=png&name=orig`) and maximum bitrate 4K video streams (`14,200 kbps`).
-* **🎯 Heavy Ranker Algorithm Scorer**: Real-time simulation of X's open-source recommendation algorithm.
-* **⚡ Zero-Suppression Link-in-Reply Splitter**: Automatically splits external links into auto-reply threads to bypass the algorithm's -60% reach penalty.
-* **🕒 64-Bit Snowflake Chronology**: Decodes tweet creation millisecond timestamps directly from tweet IDs via binary bit-shifts.
-* **📊 TweepCred PageRank Simulator**: Calculates expected account quality score based on follower-to-following authority ratios.
-* **🥷 Zero-Width Sales Cloaker**: Injects invisible Unicode characters between sensitive promotional keywords to bypass shadowban filters.
-* **⚡ 0-Network Timeline Dump**: Extracts all visible tweets, metrics, and media from the active tab with zero network egress.
-
----
-
-## 💰 Enterprise Cost Comparison
+## Cost Comparison
 
 ```text
-┌──────────────────────────────────────┬─────────────────┬──────────────────────┐
-│ Platform / Provider                  │ Monthly Cost    │ Annual Developer Cost│
-│──────────────────────────────────────┼─────────────────┼──────────────────────┤
-│ X (Twitter) Pro API                  │ $5,000.00 / mo  │ $60,000.00 / year    │
-│ Apify / BrightData Scraper Fleet     │ $1,200.00 / mo  │ $14,400.00 / year    │
-│ Proxy Rotator Infrastructure         │ $450.00 / mo    │ $5,400.00 / year     │
-│ Captcha Solving Services             │ $100.00 / mo    │ $1,200.00 / year     │
-│──────────────────────────────────────┼─────────────────┼──────────────────────┤
-│ ⚡ AegisSocial Kernel                │ $0.00 / mo      │ $0.00 / year (FREE!) │
-└──────────────────────────────────────┴─────────────────┴──────────────────────┘
-🎯 Net Annual Developer Savings: $15,600.00 – $60,000.00+ USD per seat
++--------------------------------------+-----------------+----------------------+
+| Provider / Solution                  | Monthly Cost    | Annual Operating Cost|
++--------------------------------------+-----------------+----------------------+
+| X (Twitter) Pro API                  | $5,000.00 / mo  | $60,000.00 / year    |
+| Web Scraping API Services            | $1,200.00 / mo  | $14,400.00 / year    |
+| Residential Proxy Pool               | $450.00 / mo    | $5,400.00 / year     |
+| Captcha Solving Solvers              | $100.00 / mo    | $1,200.00 / year     |
++--------------------------------------+-----------------+----------------------+
+| AegisSocial Kernel                   | $0.00 / mo      | $0.00 / year         |
++--------------------------------------+-----------------+----------------------+
 ```
 
 ---
 
-## 📦 30-Second Quickstart
+## Quickstart
 
-### 1. Download or Clone
+### 1. Installation
 ```bash
 git clone https://github.com/Agi-reverse/aegis-social-kernel.git
 cd aegis-social-kernel
 ```
-*Or grab the pre-packaged zip from [Releases](https://github.com/Agi-reverse/aegis-social-kernel/releases).*
+*Pre-built releases are also available on the [Releases](https://github.com/Agi-reverse/aegis-social-kernel/releases) page.*
 
-### 2. Load into Google Chrome / Chromium
-1. Open Chrome and go to `chrome://extensions/`.
-2. Toggle on **Developer mode** (top-right corner).
-3. Click **Load unpacked**.
-4. Select the [`src/`](src/) directory from this repository.
+### 2. Loading into Chrome
+1. Open Google Chrome and navigate to `chrome://extensions/`.
+2. Enable **Developer mode** in the top-right corner.
+3. Click **Load unpacked** and select the `src/` directory.
 
-### 3. Operate
-* Navigate to [Instagram](https://instagram.com) or [X (Twitter)](https://x.com).
-* Click the **AegisSocial Kernel** icon in your browser toolbar.
-* Watch the live **⚡ Pipeline Flow** monitor hook into React Fiber and unlock all subsystems with 0 API tokens!
+### 3. Usage
+1. Open any tab on [Instagram](https://instagram.com) or [X](https://x.com).
+2. Click the extension icon in your browser toolbar.
+3. The dashboard automatically detects the active platform and attaches to the local V8 heap.
 
 ---
 
-## 🛠️ Building for Distribution
+## Building from Source
 
-To generate a production-ready `.zip` archive for Chrome Web Store:
+To package the extension into an optimized production archive:
 ```bash
 node scripts/build-release.mjs
 ```
-The optimized package and its SHA-256 checksum will be emitted to `dist/aegis-social-kernel-v3.1.0.zip`.
+The output archive and SHA-256 verification hash will be written to `dist/`.
 
 ---
 
-## 🔒 Security & Privacy Manifesto
+## Security & Privacy
 
-- **Zero External Telemetry**: AegisSocial Kernel contains **zero analytics, tracking, or remote call-home servers**.
-- **Local Memory Execution**: All React Fiber and Relay operations execute exclusively inside your local browser tab's RAM.
-- **No Credentials Stored**: Operates entirely within your active authenticated session cookies.
-
----
-
-## 📄 License
-
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for full details.
+* **Local Execution**: All heap inspections and memory traversals execute locally inside your browser process.
+* **Zero Outbound Telemetry**: The extension contains no analytics packages, remote servers, or external endpoints.
+* **Session Integrity**: Operates within your existing session context without storing or transmitting credentials.
 
 ---
 
-<div align="center">
-  <b>Architected by @Agi-reverse for elite growth engineers, reverse-engineering researchers, and autonomous AI agents.</b>
-</div>
+## License
+
+This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for terms.
