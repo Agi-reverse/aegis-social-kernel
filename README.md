@@ -92,7 +92,7 @@ flowchart LR
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/usamagonow1-afk/aegis-social-kernel.git
+   git clone https://github.com/Agi-reverse/aegis-social-kernel.git
    cd aegis-social-kernel
    ```
 
